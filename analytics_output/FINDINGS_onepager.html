@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Day 2 — Findings (one page)</title>
+<style>
+  :root{
+    --ink:#15202b; --mut:#5c6772; --line:#dfe3e7; --bg:#ffffff;
+    --green:#1d8a64; --greenbg:#e7f4ee; --red:#bf4434; --redbg:#fbeae7;
+    --char:#16202b; --amber:#9a6a16; --amberbg:#fbf2dd;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:#eceff1;color:var(--ink);
+    font:13px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;}
+  .page{max-width:860px;margin:18px auto 0;background:var(--bg);
+    box-shadow:0 1px 6px rgba(0,0,0,.12);
+    min-height:calc(100vh - 18px);display:flex;flex-direction:column;}
+  /* header */Í
+  .hd{background:var(--char);color:#fff;padding:18px 26px 16px;}
+  .kick{color:#5fd0a3;font-size:11px;font-weight:700;letter-spacing:2.5px;}
+  .hd h1{font:700 25px/1.15 Georgia,"Times New Roman",serif;margin:5px 0 6px;}
+  .meta{color:#aeb8c2;font-size:11.5px;}
+  .meta b{color:#e7edf2;}
+  /* metric strip */
+  .strip{display:table;width:100%;border-collapse:collapse;}
+  .strip .c{display:table-cell;width:25%;padding:12px 14px;text-align:center;
+    border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .strip .c:last-child{border-right:0;}
+  .strip .n{font:700 26px/1 Georgia,serif;}
+  .strip .l{color:var(--mut);font-size:10.5px;margin-top:5px;}
+  .green{color:var(--green)} .red{color:var(--red)}
+  /* body */
+  .body{padding:16px 26px 8px;flex:1 1 auto;}
+  h2{font:700 12px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--char);margin:14px 0 6px;
+    padding-bottom:5px;border-bottom:2px solid var(--char);}
+  p{margin:6px 0;}
+  .sub{color:var(--mut);}
+  /* table */
+  table.cmp{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:12px;}
+  table.cmp th,table.cmp td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:center;}
+  table.cmp th{background:#f3f5f7;color:var(--char);font-size:10.5px;
+    text-transform:uppercase;letter-spacing:.5px;}
+  table.cmp td:first-child,table.cmp th:first-child{text-align:left;font-weight:700;}
+  .pos{background:var(--greenbg);color:var(--green);font-weight:700;}
+  .neg{background:var(--redbg);color:var(--red);font-weight:700;}
+  /* callout */
+  .verdict{background:var(--amberbg);border-left:5px solid var(--amber);
+    padding:11px 15px;margin:12px 0;border-radius:3px;}
+  .verdict b{color:var(--amber);}
+  .cols{display:table;width:100%;}
+  .col{display:table-cell;width:50%;vertical-align:top;}
+  .col:first-child{padding-right:14px;}
+  ul{margin:6px 0;padding-left:18px;} li{margin:3px 0;}
+  .ft{padding:10px 26px 16px;border-top:1px solid var(--line);
+    color:var(--mut);font-size:10.5px;}
+  .tag{display:inline-block;background:var(--char);color:#fff;border-radius:3px;
+    padding:1px 7px;font-size:10px;font-weight:700;letter-spacing:.5px;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hd">
+    <div class="kick">INSTITUTIONAL FOLLOW-THROUGH STUDY</div>
+    <h1>Day&nbsp;2: Does the Edge Survive Contact With Reality?</h1>
+    <div class="meta"><b>841 setups · 666 tickers · May 2025–May 2026</b>
+      &nbsp;|&nbsp; intraday validation on a <b>51-setup pilot</b> (Polygon 1-minute bars)</div>
+  </div>
+
+  <div class="strip">
+    <div class="c"><div class="n">73%</div><div class="l">gapped in the setup direction next day <i>(daily, n=841)</i></div></div>
+    <div class="c"><div class="n red">55%</div><div class="l">win rate from a <b>tradable open entry</b> <i>(pilot)</i></div></div>
+    <div class="c"><div class="n green">+1.56R</div><div class="l">expectancy with the playbook's <b>test-and-flip</b> entry <i>(pilot)</i></div></div>
+    <div class="c"><div class="n">73%</div><div class="l">reached the marked <b>Day-1 level</b> intraday</div></div>
+  </div>
+
+  <div class="body">
+
+    <h2>1 · What the daily data shows — a strong-looking pattern</h2>
+    <p>Every setup is a qualified institutional footprint (volume ≥ 3× ADV, move ≥ 2 ATR, close in the
+    extreme quartile). On Day 2, <b>73% gapped in the continuation direction</b>; a fresh catalyst lifts
+    that to <b class="green">87%</b> (93% for bullish earnings), and the pattern held <b>every month</b>.
+    On paper, a clean edge.</p>
+
+    <h2>2 · The catch — most of that "edge" is untradable</h2>
+    <p>That continuation is the <b>overnight gap</b> — it happens while you are flat. Measured from a
+    <b>tradable open entry</b>, the long side <b class="red">inverts</b>: buying the Day-2 open of a
+    bullish setup wins only <b class="red">44%</b> of the time (−0.8% median), and the celebrated
+    bullish-earnings cell wins just <b class="red">31%</b>. The 93% was the gap, not a trade.</p>
+
+    <h2>3 · The resolution — the entry rule <i>is</i> the edge</h2>
+    <p>The methodology is explicit: <i>don't buy the open</i> — wait for the morning <b>Test</b> and the
+    <b>Character Flip</b>. Backtesting that exact rule (enter on the flip, stop below the turn) turns the
+    long side from a loser into <b class="green">+1.66R</b> and shorts into <b class="green">+1.46R</b> —
+    <b class="green">+1.56R overall</b>. Discipline at the entry, not the setup alone, is where the money is.</p>
+
+    <table class="cmp">
+      <tr><th>Realized outcome (pilot)</th><th>Bullish · long</th><th>Bearish · short</th></tr>
+      <tr><td>Buy / short the <b>open</b> — median return</td>
+          <td class="neg">−0.8%</td><td class="pos">+1.3%</td></tr>
+      <tr><td><b>Test-and-flip</b> entry — median return</td>
+          <td class="pos">+0.8%</td><td class="pos">+0.9%</td></tr>
+      <tr><td><b>Test-and-flip</b> — expectancy · win rate</td>
+          <td class="pos">+1.66R · 56%</td><td class="pos">+1.46R · 58%</td></tr>
+    </table>
+
+    <div class="cols">
+      <div class="col">
+        <div class="verdict">
+          <b>VERDICT — Promising, not yet proven.</b> The descriptive pattern is real, but the headline
+          continuation is mostly an untradable overnight gap. The <i>tradable</i> edge lives entirely in
+          the playbook's flip entry — and the pilot supports it (+1.56R). It must be re-run at scale with
+          costs before it is bankable.
+        </div>
+      </div>
+      <div class="col">
+        <h2 style="margin-top:2px">Caveats</h2>
+        <ul>
+          <li><b>n = 51 pilot</b> (sub-cells ~13) — directional, not conclusive.</li>
+          <li><b>No costs yet</b> — commission, spread, and short-borrow on small caps are unmodeled.</li>
+          <li>"Clean-hold" trades have <b>tiny stops</b>, which inflate R-multiples.</li>
+          <li>Universe may carry <b>selection bias</b>; no control group yet.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ft">
+    <span class="tag">NEXT</span>&nbsp; Scale the flip backtest to all 841 setups · add commission + spread + borrow ·
+    add a control group (same-day movers that failed the filter) to separate edge from market drift.
+    &nbsp;&nbsp;|&nbsp;&nbsp; <i>Continuation = the Day-2 open gapped in the setup's direction. R = risk to the
+    stop below the turn.</i>
+  </div>
+
+</div>
+</body>
+</html>

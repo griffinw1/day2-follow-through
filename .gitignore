@@ -1,0 +1,11 @@
+# secrets — never commit API keys
+.env
+*.env
+**/.env
+
+# python cache
+__pycache__/
+*.pyc
+
+# regenerable intraday API cache
+analytics_output/intraday_cache/
