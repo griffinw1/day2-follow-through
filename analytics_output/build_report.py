@@ -78,6 +78,10 @@ body{margin:0;background:#eceff1;color:#15202b;
 
 def build():
     parts = []
+    parts.append('<p class="lead" style="margin-top:24px"><b>The whole study on one plate.</b> '
+                 'The six daily findings at a glance — full detail and the intraday reality check follow below.</p>')
+    parts.append('<div class="op"><img alt="The Day 2 setup at a glance — six-panel overview" '
+                 'src="data:image/png;base64,%s"></div>' % b64("charts/plate_day2.png", maxw=1600))
     parts.append('<div class="part"><span>PART 1</span> &nbsp; The Daily Setup — A Strong-Looking Pattern</div>')
     parts.append('<p class="lead">Each setup is a fully-qualified Day-1 footprint. The daily evidence below shows the continuation pattern exists; whether it is <i>tradable</i> comes in Part 2.</p>')
     parts += [fig_block(*f) for f in DAILY]
@@ -85,7 +89,14 @@ def build():
     parts.append('<p class="lead">Realized Polygon 1-minute data on a 51-setup pilot. This is where the headline number meets reality.</p>')
     parts += [fig_block(*f) for f in INTRADAY]
     parts.append('<div class="part"><span>PART 3</span> &nbsp; Findings — One Page</div>')
-    parts.append(f'<div class="op"><img alt="One-page findings" src="data:image/png;base64,{b64("/tmp/onepager.png", maxw=1600)}"></div>')
+    # embed the live one-pager (self-contained, always in sync) rather than a flat screenshot
+    with open("FINDINGS_onepager.html") as fh:
+        onepager_doc = fh.read()
+    parts.append(
+        '<div class="op"><iframe title="One-page findings" '
+        'style="width:100%;height:1040px;border:1px solid #e3e6e9;border-radius:4px;'
+        'box-shadow:0 1px 6px rgba(0,0,0,.10);background:#eceff1;display:block;" '
+        f'srcdoc="{html.escape(onepager_doc)}"></iframe></div>')
 
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>Day 2 — The Follow-Through · Full Report</title><style>{CSS}</style></head>
