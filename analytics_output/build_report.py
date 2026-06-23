@@ -14,27 +14,27 @@ def b64(path, maxw=1500):
 # (file, fig#, title, explanation)
 DAILY = [
  ("charts/footprint.png", 1, "An institutional-grade universe",
-  "All 841 setups cleared at least 3× their 21-day average volume — twice the rulebook minimum, with a median of 4.2×. That volume is the institutional fingerprint: funds and desks moving with urgency, not retail momentum."),
+  "We want <b>high relative volume (RVOL)</b> for this idea to be in play — and we have it in this dataset."),
  ("charts/closeloc.png", 2, "A bimodal conviction fingerprint",
-  "Day-1 close location is sharply bimodal — bullish setups close near the high (~0.95), bearish near the low (~0.05), and nothing lands in the 0.25–0.75 “dead zone.” It’s the signature of participants who held into the close with conviction."),
+  "For these setups to be most in play we want them to <b>close at the low or high of the Day-1 range</b> — and we see that in the dataset."),
  ("charts/payoff.png", 3, "A catalyst nearly doubles the edge",
-  "On Day 2, 73% of setups gapped in the continuation direction. A fresh catalyst nearly doubles the edge: bullish setups with earnings continued 93% of the time, versus 59% with no catalyst."),
+  "We want <b>the move to keep going the next day</b> — and most of the time it does, especially when a catalyst is behind it."),
  ("charts/catalyst.png", 4, "Earnings shifts the whole distribution",
-  "Earnings doesn’t just lift the hit rate — it shifts the entire outcome distribution to the right, from a median +0.3% for structural moves to +7.3% for earnings-driven ones."),
+  "We want <b>a real catalyst like earnings</b> driving the move — and when there is one, the follow-through is far bigger."),
  ("charts/extension.png", 5, "The extension paradox",
-  "More is not always better. Follow-through peaks at 7–10× volume and then fades — the most blown-out, lottery-ticket names (10×+) are the least reliable, exactly the caution the methodology raises about chasing extended moves."),
+  "We want a big move — but <b>not the most extreme one</b>. The wildest, highest-volume names actually follow through the least, so don't chase them."),
  ("charts/monthly.png", 6, "A persistent, year-round edge",
-  "This wasn’t a single-month fluke. The continuation rate held every month of the year, never dropping below ~64%."),
+  "We want to know this isn't luck — and it isn't: <b>the edge showed up in every single month</b> of the year."),
 ]
 INTRADAY = [
  ("charts/event_study.png", 7, "From the open: longs fade, shorts follow through",
-  "Here’s the catch: that 73% “continuation” is the overnight gap, which happens while you’re flat. Tracking the realized intraday path from the open tells a different story — longs fade (−0.7%) while shorts follow through (+1.5%). Measured from a tradable entry, the long edge at the open disappears."),
+  "The catch: the next-day jump happens <b>overnight, before you can trade it</b>. If you just buy at the open, the long trades actually lose."),
  ("charts/mfe_mae.png", 8, "Trade quality: room up vs. room down",
-  "Still, the structure is real. Across the 51-setup pilot the median trade had more room up (0.75 ATR) than down (0.54 ATR) — a 1.38:1 ratio — and 73% of setups reached the marked Day-1 level. Those levels are genuine intraday magnets."),
+  "When these trades work they <b>give you more reward than risk</b> — price usually runs to the level we marked before it turns."),
  ("charts/entry_compare.png", 9, "The entry rule is the edge",
-  "The resolution: the methodology says don’t buy the open — wait for the morning Test and the Character Flip. Backtesting that exact entry (enter on the flip, stop below the turn) flips the long side from −0.8% to +1.66R expectancy. The entry rule, not the setup alone, is where the money is."),
+  "The key rule: <b>don't buy the open — wait for the stock to test a level and turn</b>. Entering on that turn is what makes it profitable."),
  ("charts/trade_cards.png", 10, "Twelve trades, worst to best",
-  "Twelve representative trades, worst to best — each showing the minute path from the open, session VWAP, Day-1 levels, the flip entry (triangle) and the exit (×). Winners ride the favorable excursion; losers stop out quickly below the turn — the single invalidation rule in action."),
+  "Trade by trade it's simple: <b>winners keep running, losers get cut fast</b> with a tight stop — small losses, bigger wins."),
 ]
 
 def fig_block(path, n, title, expl):
@@ -43,7 +43,7 @@ def fig_block(path, n, title, expl):
     return f"""
     <figure class="fig">
       <img alt="Figure {n}: {html.escape(title)}" src="data:image/png;base64,{b64(path)}">
-      <figcaption><b>Figure {n}.</b> {html.escape(expl)}</figcaption>
+      <figcaption><b>Figure {n}.</b> {expl}</figcaption>
     </figure>"""
 
 CSS = """
