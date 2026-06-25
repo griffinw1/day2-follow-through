@@ -83,17 +83,17 @@ body{margin:0;background:#eceff1;color:#15202b;
 
 def build():
     parts = []
-    parts.append('<p class="lead" style="margin-top:24px"><b>The whole study on one plate.</b> '
-                 'The six daily findings at a glance — full detail and the intraday reality check follow below.</p>')
-    parts.append('<div class="op"><img alt="The Day 2 setup at a glance — six-panel overview" '
+    parts.append('<p class="lead" style="margin-top:24px"><b>The six daily findings on one plate.</b> '
+                 'Detail and the intraday test follow below.</p>')
+    parts.append('<div class="op"><img alt="Day 2 setup, six panel overview" '
                  'src="data:image/png;base64,%s"></div>' % b64("charts/plate_day2.png", maxw=1600))
-    parts.append('<div class="part"><span>PART 1</span> &nbsp; The Daily Setup — A Strong-Looking Pattern</div>')
-    parts.append('<p class="lead">Each setup is a fully-qualified Day-1 footprint. The daily evidence below shows the continuation pattern exists; whether it is <i>tradable</i> comes in Part 2.</p>')
+    parts.append('<div class="part"><span>PART 1</span> &nbsp; The Daily Pattern</div>')
+    parts.append('<p class="lead">Each setup is a qualified Day 1 footprint. The daily data shows the continuation pattern exists. Whether it is <i>tradable</i> comes in Part 2.</p>')
     parts += [fig_block(*f) for f in DAILY]
-    parts.append('<div class="part"><span>PART 2</span> &nbsp; The Intraday Reality Check — Is It Tradable?</div>')
-    parts.append('<p class="lead">Realized Polygon 1-minute data on a 51-setup pilot. This is where the headline number meets reality.</p>')
+    parts.append('<div class="part"><span>PART 2</span> &nbsp; Is It Actually Tradable</div>')
+    parts.append('<p class="lead">Polygon 1 minute data on a 51 setup pilot.</p>')
     parts += [fig_block(*f) for f in INTRADAY]
-    parts.append('<div class="part"><span>PART 3</span> &nbsp; Findings — One Page</div>')
+    parts.append('<div class="part"><span>PART 3</span> &nbsp; The One Page Verdict</div>')
     # embed the live one-pager (self-contained, always in sync) rather than a flat screenshot
     with open("FINDINGS_onepager.html") as fh:
         onepager_doc = fh.read()
@@ -104,99 +104,79 @@ def build():
         f'srcdoc="{html.escape(onepager_doc)}"></iframe></div>')
 
     parts.append('''
-    <div class="part"><span>PART 4</span> &nbsp; The Full Picture, Explained Simply</div>
-    <p class="lead">A plain language walkthrough of everything above, written so a newer trader can follow it
-    start to finish. Every point ties back to a chart in this report.</p>
+    <div class="part"><span>PART 4</span> &nbsp; Summary</div>
     <div class="sum">
 
-    <h3>What this study set out to answer</h3>
-    <p>The Day 2 trade is simple to describe. A stock has a huge, high volume day, which we call Day 1. The
-    question we tested is whether the next morning, Day 2, you can make money trading in the same direction
-    as that big move. We looked at 841 of these big days between May 2025 and May 2026, and then zoomed in
-    on a smaller group minute by minute to see what actually happened once the market opened.</p>
+    <h3>The question</h3>
+    <p>A stock has a huge, high volume day, the Day 1. The question is whether you can make money the next
+    morning trading in the same direction. We looked at 841 of these days from May 2025 to May 2026, then
+    checked a smaller group minute by minute.</p>
 
-    <h3>Part 1, the daily picture looked very strong</h3>
-    <p>Seen from a distance, using only end of day data, the setup looks like a clean edge. Five things stood out.</p>
+    <h3>The daily data looked strong</h3>
+    <p>Using only end of day data, five things stood out.</p>
     <ul>
-      <li><b>Real institutional volume.</b> Every stock we kept traded on enormous volume, at least three
-      times its own normal daily volume and usually about four times. Traders call this relative volume, or
-      RVOL. Volume that large means big players such as funds and trading desks were active, not just
-      individuals. That is the fingerprint we want before calling something a Day 1. (Figure 1)</li>
-      <li><b>A conviction close.</b> We also looked at where each stock finished inside its daily range,
-      which is called the close location. Bullish setups closed right at the high of the day and bearish
-      setups right at the low, with almost nothing finishing in the middle. Closing at the extreme is a sign
-      that buyers, or sellers, stayed in control all the way into the end of the day. (Figure 2)</li>
-      <li><b>A high continuation rate.</b> On Day 2, about 73 percent of these stocks opened gapped in the
-      same direction as the Day 1 move. When a fresh news catalyst was behind the move that rose to about 87
-      percent, and to about 93 percent for bullish earnings. (Figures 3 and 4)</li>
-      <li><b>Stronger is not always better.</b> The most extreme, most blown out volume names actually
-      followed through the least. The cleanest and most reliable continuation came from strong but not crazy
-      moves, not from the lottery ticket names everyone chases. (Figure 5)</li>
-      <li><b>It held all year.</b> This was not one lucky month. The continuation rate showed up in every
-      single month of the year and never fell below about 64 percent. (Figure 6)</li>
-    </ul>
-    <p>On paper, that is a clear and repeatable pattern.</p>
-
-    <h3>Part 2, the honest intraday check</h3>
-    <p>The daily view is encouraging, but it hides a problem that only shows up when you watch the trade
-    minute by minute.</p>
-    <ul>
-      <li><b>The catch.</b> That 73 percent continuation is mostly the overnight gap, the jump that happens
-      between one day's close and the next day's open, while you are flat and cannot do anything about it. If
-      you instead measure from a price you could actually get, the Day 2 open, the long side flips from a
-      winner to a loser. Buying the open of a bullish setup won only about 44 percent of the time. So the
-      headline number was the gap, not a trade you could take. (Figure 7)</li>
-      <li><b>The structure is still real.</b> Even so, the move has good shape. In the minute by minute
-      pilot, the typical trade offered more room in your favor than against you, about 0.75 ATR up versus
-      0.54 ATR down, which is roughly 1.4 to 1. ATR, or average true range, is just a measure of how much a
-      stock normally moves in a day, so we can compare a 400 dollar stock and a 5 dollar stock fairly. On top
-      of that, 73 percent of setups traded back to the Day 1 level we had marked, so those levels act like
-      magnets. (Figure 8)</li>
-      <li><b>The entry rule is the real edge.</b> The playbook is explicit that you should not buy the open.
-      You wait for two things. First the Test, where price pulls back to the Day 1 level. Then the Character
-      Flip, the moment the selling stops and buying clearly takes over. You enter on that turn and place your
-      stop just beyond it. When we backtested that exact rule, the long side went from a loser to about
-      +1.66R and the short side to about +1.46R, for roughly +1.56R overall. R simply means your risk, the
-      distance from your entry to your stop, so +1.5R means you earned about one and a half times what you
-      were risking. (Figure 9)</li>
-      <li><b>Trade by trade.</b> Looking at individual trades from worst to best, the winners ride the
-      favorable move while the losers are cut quickly when price breaks back below the turn. The result is
-      small losses and bigger wins. That single exit rule, get out if the turn fails, is what keeps the
-      losers small. (Figure 10)</li>
+      <li><b>Real institutional volume.</b> Every stock traded at least three times its normal daily volume,
+      usually about four times. This is relative volume, RVOL. Volume that large means funds and trading
+      desks were active, not just individuals. (Figure 1)</li>
+      <li><b>A conviction close.</b> Close location is where a stock finishes inside its daily range. Bullish
+      setups closed at the high and bearish setups at the low, with almost nothing in the middle. That means
+      buyers or sellers held control into the close. (Figure 2)</li>
+      <li><b>A high continuation rate.</b> About 73 percent of these stocks opened the next day gapped in the
+      same direction. A fresh news catalyst pushed that to about 87 percent, and to 93 percent for bullish
+      earnings. (Figures 3 and 4)</li>
+      <li><b>Stronger is not always better.</b> The most blown out volume names followed through the least.
+      The cleanest continuation came from strong but not extreme moves. (Figure 5)</li>
+      <li><b>It held all year.</b> The continuation rate showed up every month and never fell below about 64
+      percent. (Figure 6)</li>
     </ul>
 
-    <h3>Part 3, the verdict in one breath</h3>
-    <p>Putting it together, the pattern is real, but the part that grabs attention, the big continuation, is
-    mostly an overnight gap you cannot trade. The part you can trade is the entry. The money comes from
-    discipline at the entry, not from the setup by itself. The pilot supports this at about +1.56R, which
-    makes the edge promising rather than proven.</p>
+    <h3>The intraday reality</h3>
+    <p>Watched minute by minute, the picture changes.</p>
+    <ul>
+      <li><b>The catch.</b> The 73 percent continuation is mostly the overnight gap, the move between one
+      day's close and the next day's open, which happens while you are flat. Measured from the Day 2 open, a
+      price you can actually get, the long side turns negative. Buying the open of a bullish setup won only
+      about 44 percent of the time. The headline number was the gap, not a trade. (Figure 7)</li>
+      <li><b>The structure is real.</b> The typical trade had more room in your favor than against you, about
+      0.75 ATR up versus 0.54 ATR down, roughly 1.4 to 1. ATR, average true range, measures how much a stock
+      normally moves in a day, so it compares a 400 dollar stock and a 5 dollar stock fairly. And 73 percent
+      of setups traded back to the marked Day 1 level, so those levels act like magnets. (Figure 8)</li>
+      <li><b>The entry rule is the edge.</b> The playbook says do not buy the open. Wait for the Test, where
+      price pulls back to the Day 1 level, then the Character Flip, where selling stops and buying takes over.
+      Enter on that turn with a stop just beyond it. That rule turned the long side from a loser into about
+      +1.66R and the short side into +1.46R, roughly +1.56R overall. R is your risk, the distance from entry
+      to stop, so +1.5R is about one and a half times what you risked. (Figure 9)</li>
+      <li><b>Trade by trade.</b> Winners ride the move and losers get cut fast when price breaks back below
+      the turn. Small losses, bigger wins. The exit rule, out if the turn fails, is what keeps losses small.
+      (Figure 10)</li>
+    </ul>
 
-    <h3>What to take away, in plain terms</h3>
+    <h3>The verdict</h3>
+    <p>The pattern is real, but the big continuation everyone notices is mostly an overnight gap you cannot
+    trade. The part you can trade is the entry. The money is in the entry, not the setup. The pilot supports
+    it at about +1.56R, so the edge is promising but not proven.</p>
+
+    <h3>What it means for trading</h3>
     <ul>
       <li>The setup alone is not the edge. Buying or shorting the open does not work.</li>
-      <li>The entry rule is the edge. Wait for the test and the flip before you commit.</li>
-      <li>Favor strong but not blown out moves, and favor setups with a real catalyst such as earnings.</li>
-      <li>Keep every loss small by honoring the one exit rule when the turn fails.</li>
+      <li>The entry is the edge. Wait for the test and the flip.</li>
+      <li>Favor strong but not blown out moves, and a real catalyst like earnings.</li>
+      <li>Keep losses small. Get out when the turn fails.</li>
     </ul>
 
-    <h3>What we still do not know</h3>
-    <p>This is a first look, not a finished product, and a few honest limits matter.</p>
+    <h3>Limits</h3>
     <ul>
-      <li>The minute by minute pilot is small, about 51 trades, so it points in a direction rather than
-      proving one.</li>
-      <li>Trading costs are not included yet. Commission, the spread between the bid and the ask, and the
-      cost to borrow shares for a short all eat into results, and they hit hardest on smaller stocks.</li>
-      <li>Some winners had very tight stops, which can make the R numbers look better than they would in
-      real trading.</li>
-      <li>The group we studied may carry selection bias, and we do not yet have a control group of failed
-      setups to compare against.</li>
+      <li>The pilot is small, about 51 trades, so it points a direction rather than proving one.</li>
+      <li>Costs are not included. Commission, spread, and the cost to borrow shares for a short eat into
+      results, most on smaller stocks.</li>
+      <li>Some winners had tight stops, which flatters the R numbers.</li>
+      <li>The group may carry selection bias, with no control group of failed setups yet.</li>
     </ul>
 
-    <h3>Where this is heading</h3>
-    <p>The next steps are to run the same entry rule across many more setups, to add realistic trading costs,
-    and to add a control group so we can tell a true edge apart from the market simply drifting upward. Work
-    has also begun on rebuilding the universe at the playbook's own thresholds and studying the long and
-    short sides in more depth, which will feed a future version of this report.</p>
+    <h3>Next steps</h3>
+    <p>Run the entry rule across more setups, add real costs, and add a control group to separate edge from
+    market drift. A rebuild of the universe at the playbook's own thresholds, with a deeper look at the long
+    and short sides, is already underway.</p>
 
     </div>''')
 
@@ -206,18 +186,18 @@ def build():
   <div class="hero">
     <div class="kick">INSTITUTIONAL FOLLOW-THROUGH STUDY</div>
     <h1>Day&nbsp;2: The Follow-Through</h1>
-    <p>A study of the “Day 2” continuation setup — buying or shorting a stock the morning after a big,
-       high-volume, conviction-close move. <b>Part 1</b> shows the daily pattern across
-       <b>841 setups</b> (May 2025–May 2026); <b>Part 2</b> stress-tests it on realized intraday data;
-       <b>Part 3</b> is the one-page verdict. Read top to bottom.</p>
+    <p>The Day 2 continuation setup is buying or shorting a stock the morning after a big, high volume,
+       conviction close move. <b>Part 1</b> is the daily pattern across <b>841 setups</b> (May 2025 to
+       May 2026). <b>Part 2</b> tests it on intraday data. <b>Part 3</b> is the one page verdict.
+       <b>Part 4</b> is the written summary.</p>
   </div>
   <div class="content">
     {''.join(parts)}
   </div>
   <div class="foot">
-    Data: 841 Day 2 setups across 666 tickers, May 2025 – May 2026 · intraday pilot n = 51, Polygon 1-minute bars.
-    Continuation = the Day-2 open gapped in the setup’s direction. R = risk to the stop below the turn.
-    All figures are embedded in this file — select all, copy, and paste into a document to keep the images.
+    841 Day 2 setups across 666 tickers, May 2025 to May 2026. Intraday pilot of 51 setups, Polygon 1 minute bars.
+    Continuation means the Day 2 open gapped in the setup's direction. R is the risk to the stop below the turn.
+    All charts are embedded in this file, so select all and copy to keep the images.
   </div>
 </div></body></html>"""
 
