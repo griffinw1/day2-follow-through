@@ -83,7 +83,7 @@ body{margin:0;background:#eceff1;color:#15202b;
 
 def build():
     parts = []
-    parts.append('''
+    takeaways = ('''
     <div class="part"><span>KEY TAKEAWAYS</span> &nbsp; What the Data Told Us</div>
     <div class="sum">
       <h3>1. Longs carried more forgiving edge than shorts</h3>
@@ -103,12 +103,12 @@ def build():
       twice as strict as the method it is testing. That cutoff quietly removes the setups we like most. Think about a short setup where the stock
       only ran up about 2 ATR, or less. If the Day 1 move down is the same size or bigger, it has already
       covered the entire run up, so there may be no meat on the bone left for another leg down. When we rebuilt the universe at the real threshold, about <b>32,800 setups qualified versus the 841
-      here</b>, so this dataset captured only around <b>2.5 percent</b> of the actual opportunity set. As we said
-      up top, this 2 ATR floor is exactly what screens out the short setups we like best.</p>
+      here</b>, so this dataset captured only around <b>2.5 percent</b> of the actual opportunity set. As noted in the
+      first point, this 2 ATR floor is exactly what screens out the short setups we like best.</p>
 
       <h3>3. Without a catalyst there is no real edge, and the earnings edge does not generalize</h3>
       <p>The dataset shows an edge when an earnings catalyst is present, you can see it in the catalyst charts
-      below, but that edge does not hold up once you test it broadly and pay real costs. Trading the drift
+      above, but that edge does not hold up once you test it broadly and pay real costs. Trading the drift
       after earnings does not work in practice. In large stocks the news is priced in almost instantly, and in
       small stocks the drift is real but lives in names you cannot trade cheaply, wide spreads, thin volume,
       and hard or expensive borrow, so the costs eat whatever is there. A catalyst is necessary but not
@@ -125,6 +125,7 @@ def build():
     parts.append('<div class="part"><span>PART 2</span> &nbsp; Is It Actually Tradable</div>')
     parts.append('<p class="lead">Polygon 1 minute data on a 51 setup pilot.</p>')
     parts += [fig_block(*f) for f in INTRADAY]
+    parts.append(takeaways)
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>Day 2 — The Follow-Through · Full Report</title><style>{CSS}</style></head>
 <body><div class="wrap">
@@ -132,8 +133,8 @@ def build():
     <div class="kick">INSTITUTIONAL FOLLOW-THROUGH STUDY</div>
     <h1>Day&nbsp;2: The Follow-Through</h1>
     <p>The Day 2 continuation setup is buying or shorting a stock the morning after a big, high volume,
-       conviction close move. Our key takeaways are up top. Below them, <b>Part 1</b> is the daily pattern
-       across <b>841 setups</b> (May 2025 to May 2026) and <b>Part 2</b> tests it on intraday data.</p>
+       conviction close move. <b>Part 1</b> is the daily pattern across <b>841 setups</b> (May 2025 to
+       May 2026) and <b>Part 2</b> tests it on intraday data. Our key takeaways are at the bottom.</p>
   </div>
   <div class="content">
     {''.join(parts)}
