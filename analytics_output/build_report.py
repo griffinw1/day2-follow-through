@@ -83,6 +83,44 @@ body{margin:0;background:#eceff1;color:#15202b;
 
 def build():
     parts = []
+    parts.append('''
+    <div class="part"><span>KEY TAKEAWAYS</span> &nbsp; What the Data Told Us</div>
+    <div class="sum">
+      <h3>1. Longs carried more forgiving edge than shorts</h3>
+      <p>This is not to say shorts have no edge. There is real discretionary edge on the short side, but the
+      long side gives you more room for error. Taken on the disciplined entry, waiting for the test and the
+      flip rather than buying the open, the long side returned about <b>+1.66R</b> and stayed positive across
+      a much broader and looser set of setups. The short side only worked inside a narrow window, a controlled
+      two to three day run that did not end in a vertical climax, at about <b>+1.16R with a 55 percent win
+      rate</b>. The setups most people would call the strongest shorts, the vertical parabolas, actually lost
+      and stopped out on nearly every attempt. Longs forgive imprecision, shorts punish it.</p>
+
+      <h3>2. The thresholds here are stricter than they need to be</h3>
+      <p>This dataset requires a Day 1 range of at least 2 ATR, and nothing smaller is included, <b>0 of the
+      841 setups</b> sit below it. The playbook itself only calls for more than 1 ATR, so the data is about
+      twice as strict as the method it is testing. That cutoff quietly removes the setups we like most. On the
+      short side a run up of only about 2 ATR leaves no meat on the bone for a move back down, and a 2 ATR down
+      day that closes on its lows has already overshot its own moving averages, so there is nothing left to
+      fade. When we rebuilt the universe at the real threshold, about <b>32,800 setups qualified versus the 841
+      here</b>, so this dataset captured only around <b>2.5 percent</b> of the actual opportunity set. We are
+      not covering the short side of Day 2 in this writeup, but the short setups we like best are excluded from
+      this data for exactly this reason.</p>
+
+      <h3>3. Without a catalyst there is no real edge, and the earnings edge does not generalize</h3>
+      <p>The dataset does show an edge when an earnings catalyst is present, you can see it in the catalyst
+      charts below, but that edge does not survive once you widen the population and account for costs. Plain
+      post earnings drift is not the answer. In large caps the surprise is priced in within seconds to minutes
+      and the small residual drift sits inside the spread and fees, so nothing is left to trade, and our AAPL
+      work showed the same thing. In small caps the drift is genuinely larger, the classic Bernard and Thomas
+      anomaly, but it lives in exactly the names you cannot trade cheaply, wide spreads, thin volume, real
+      market impact, and hard or expensive borrow on the short side. After frictions, capacity limits, and the
+      decay that has shrunk the effect since the 1990s, the net tradeable edge is about zero. So a catalyst is
+      necessary but not sufficient, and it does not have to be earnings. Edge here comes from assessing each
+      setup discretionarily, weighing the catalyst, the structure, the trend, and the tape together, not from
+      any single fixed screen. If small caps offer anything around earnings it is more likely the opposite of
+      drift, the violent mean reversion after a parabolic move, which is the low float fade thesis worth
+      testing next.</p>
+    </div>''')
     parts.append('<p class="lead" style="margin-top:24px"><b>The six daily findings on one plate.</b> '
                  'Detail and the intraday test follow below.</p>')
     parts.append('<div class="op"><img alt="Day 2 setup, six panel overview" '
@@ -93,93 +131,6 @@ def build():
     parts.append('<div class="part"><span>PART 2</span> &nbsp; Is It Actually Tradable</div>')
     parts.append('<p class="lead">Polygon 1 minute data on a 51 setup pilot.</p>')
     parts += [fig_block(*f) for f in INTRADAY]
-    parts.append('<div class="part"><span>PART 3</span> &nbsp; The One Page Verdict</div>')
-    # embed the live one-pager (self-contained, always in sync) rather than a flat screenshot
-    with open("FINDINGS_onepager.html") as fh:
-        onepager_doc = fh.read()
-    parts.append(
-        '<div class="op"><iframe title="One-page findings" '
-        'style="width:100%;height:1040px;border:1px solid #e3e6e9;border-radius:4px;'
-        'box-shadow:0 1px 6px rgba(0,0,0,.10);background:#eceff1;display:block;" '
-        f'srcdoc="{html.escape(onepager_doc)}"></iframe></div>')
-
-    parts.append('''
-    <div class="part"><span>PART 4</span> &nbsp; Summary</div>
-    <div class="sum">
-
-    <h3>The question</h3>
-    <p>A stock has a huge, high volume day, the Day 1. The question is whether you can make money the next
-    morning trading in the same direction. We looked at 841 of these days from May 2025 to May 2026, then
-    checked a smaller group minute by minute.</p>
-
-    <h3>The daily data looked strong</h3>
-    <p>Using only end of day data, five things stood out.</p>
-    <ul>
-      <li><b>Real institutional volume.</b> Every stock traded at least three times its normal daily volume,
-      usually about four times. This is relative volume, RVOL. Volume that large means funds and trading
-      desks were active, not just individuals. (Figure 1)</li>
-      <li><b>A conviction close.</b> Close location is where a stock finishes inside its daily range. Bullish
-      setups closed at the high and bearish setups at the low, with almost nothing in the middle. That means
-      buyers or sellers held control into the close. (Figure 2)</li>
-      <li><b>A high continuation rate.</b> About 73 percent of these stocks opened the next day gapped in the
-      same direction. A fresh news catalyst pushed that to about 87 percent, and to 93 percent for bullish
-      earnings. (Figures 3 and 4)</li>
-      <li><b>Stronger is not always better.</b> The most blown out volume names followed through the least.
-      The cleanest continuation came from strong but not extreme moves. (Figure 5)</li>
-      <li><b>It held all year.</b> The continuation rate showed up every month and never fell below about 64
-      percent. (Figure 6)</li>
-    </ul>
-
-    <h3>The intraday reality</h3>
-    <p>Watched minute by minute, the picture changes.</p>
-    <ul>
-      <li><b>The catch.</b> The 73 percent continuation is mostly the overnight gap, the move between one
-      day's close and the next day's open, which happens while you are flat. Measured from the Day 2 open, a
-      price you can actually get, the long side turns negative. Buying the open of a bullish setup won only
-      about 44 percent of the time. The headline number was the gap, not a trade. (Figure 7)</li>
-      <li><b>The structure is real.</b> The typical trade had more room in your favor than against you, about
-      0.75 ATR up versus 0.54 ATR down, roughly 1.4 to 1. ATR, average true range, measures how much a stock
-      normally moves in a day, so it compares a 400 dollar stock and a 5 dollar stock fairly. And 73 percent
-      of setups traded back to the marked Day 1 level, so those levels act like magnets. (Figure 8)</li>
-      <li><b>The entry rule is the edge.</b> The playbook says do not buy the open. Wait for the Test, where
-      price pulls back to the Day 1 level, then the Character Flip, where selling stops and buying takes over.
-      Enter on that turn with a stop just beyond it. That rule turned the long side from a loser into about
-      +1.66R and the short side into +1.46R, roughly +1.56R overall. R is your risk, the distance from entry
-      to stop, so +1.5R is about one and a half times what you risked. (Figure 9)</li>
-      <li><b>Trade by trade.</b> Winners ride the move and losers get cut fast when price breaks back below
-      the turn. Small losses, bigger wins. The exit rule, out if the turn fails, is what keeps losses small.
-      (Figure 10)</li>
-    </ul>
-
-    <h3>The verdict</h3>
-    <p>The pattern is real, but the big continuation everyone notices is mostly an overnight gap you cannot
-    trade. The part you can trade is the entry. The money is in the entry, not the setup. The pilot supports
-    it at about +1.56R, so the edge is promising but not proven.</p>
-
-    <h3>What it means for trading</h3>
-    <ul>
-      <li>The setup alone is not the edge. Buying or shorting the open does not work.</li>
-      <li>The entry is the edge. Wait for the test and the flip.</li>
-      <li>Favor strong but not blown out moves, and a real catalyst like earnings.</li>
-      <li>Keep losses small. Get out when the turn fails.</li>
-    </ul>
-
-    <h3>Limits</h3>
-    <ul>
-      <li>The pilot is small, about 51 trades, so it points a direction rather than proving one.</li>
-      <li>Costs are not included. Commission, spread, and the cost to borrow shares for a short eat into
-      results, most on smaller stocks.</li>
-      <li>Some winners had tight stops, which flatters the R numbers.</li>
-      <li>The group may carry selection bias, with no control group of failed setups yet.</li>
-    </ul>
-
-    <h3>Next steps</h3>
-    <p>Run the entry rule across more setups, add real costs, and add a control group to separate edge from
-    market drift. A rebuild of the universe at the playbook's own thresholds, with a deeper look at the long
-    and short sides, is already underway.</p>
-
-    </div>''')
-
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>Day 2 — The Follow-Through · Full Report</title><style>{CSS}</style></head>
 <body><div class="wrap">
@@ -187,9 +138,8 @@ def build():
     <div class="kick">INSTITUTIONAL FOLLOW-THROUGH STUDY</div>
     <h1>Day&nbsp;2: The Follow-Through</h1>
     <p>The Day 2 continuation setup is buying or shorting a stock the morning after a big, high volume,
-       conviction close move. <b>Part 1</b> is the daily pattern across <b>841 setups</b> (May 2025 to
-       May 2026). <b>Part 2</b> tests it on intraday data. <b>Part 3</b> is the one page verdict.
-       <b>Part 4</b> is the written summary.</p>
+       conviction close move. Our key takeaways are up top. Below them, <b>Part 1</b> is the daily pattern
+       across <b>841 setups</b> (May 2025 to May 2026) and <b>Part 2</b> tests it on intraday data.</p>
   </div>
   <div class="content">
     {''.join(parts)}
