@@ -100,10 +100,9 @@ def build():
       <h3>2. The thresholds here are stricter than they need to be</h3>
       <p>This dataset requires a Day 1 range of at least 2 ATR, and nothing smaller is included, <b>0 of the
       841 setups</b> sit below it. The playbook itself only calls for more than 1 ATR, so the data is about
-      twice as strict as the method it is testing. That cutoff quietly removes the setups we like most. On the
-      short side a run up of only about 2 ATR leaves no meat on the bone for a move back down, and a 2 ATR down
-      day that closes on its lows has already overshot its own moving averages, so there is nothing left to
-      fade. When we rebuilt the universe at the real threshold, about <b>32,800 setups qualified versus the 841
+      twice as strict as the method it is testing. That cutoff quietly removes the setups we like most. Think about a short setup where the stock
+      only ran up about 2 ATR, or less. If the Day 1 move down is the same size or bigger, it has already
+      covered the entire run up, so there may be no meat on the bone left for another leg down. When we rebuilt the universe at the real threshold, about <b>32,800 setups qualified versus the 841
       here</b>, so this dataset captured only around <b>2.5 percent</b> of the actual opportunity set. As we said
       up top, this 2 ATR floor is exactly what screens out the short setups we like best.</p>
 
