@@ -87,13 +87,15 @@ def build():
     <div class="part"><span>KEY TAKEAWAYS</span> &nbsp; What the Data Told Us</div>
     <div class="sum">
       <h3>1. Longs carried more forgiving edge than shorts</h3>
-      <p>This is not to say shorts have no edge. There is real discretionary edge on the short side, but the
-      long side gives you more room for error. Taken on the disciplined entry, waiting for the test and the
-      flip rather than buying the open, the long side returned about <b>+1.66R</b> and stayed positive across
-      a much broader and looser set of setups. The short side only worked inside a narrow window, a controlled
-      two to three day run that did not end in a vertical climax, at about <b>+1.16R with a 55 percent win
-      rate</b>. The setups most people would call the strongest shorts, the vertical parabolas, actually lost
-      and stopped out on nearly every attempt. Longs forgive imprecision, shorts punish it.</p>
+      <p>In our testing the long side gave us more room for error. We are not saying shorts have no edge, we
+      think there is real discretionary edge there, but longs were more forgiving. Taken on the disciplined
+      entry, waiting for the test and the flip instead of buying the open, the long side returned about
+      <b>+1.66R</b> for us and stayed positive across a much broader and looser set of setups. The short side
+      only worked in a narrow window, a controlled two to three day run that did not end in a vertical climax,
+      at about <b>+1.16R with a 55 percent win rate</b>, and the names most people would call the strongest
+      shorts, the vertical parabolas, actually lost and stopped out on nearly every attempt. We will also say
+      it plainly, <b>the short Day 2s we think have the most edge are not even in this dataset</b>, they get
+      screened out before we ever see them. Longs forgive imprecision, shorts punish it.</p>
 
       <h3>2. The thresholds here are stricter than they need to be</h3>
       <p>This dataset requires a Day 1 range of at least 2 ATR, and nothing smaller is included, <b>0 of the
@@ -102,24 +104,17 @@ def build():
       short side a run up of only about 2 ATR leaves no meat on the bone for a move back down, and a 2 ATR down
       day that closes on its lows has already overshot its own moving averages, so there is nothing left to
       fade. When we rebuilt the universe at the real threshold, about <b>32,800 setups qualified versus the 841
-      here</b>, so this dataset captured only around <b>2.5 percent</b> of the actual opportunity set. We are
-      not covering the short side of Day 2 in this writeup, but the short setups we like best are excluded from
-      this data for exactly this reason.</p>
+      here</b>, so this dataset captured only around <b>2.5 percent</b> of the actual opportunity set. As we said
+      up top, this 2 ATR floor is exactly what screens out the short setups we like best.</p>
 
       <h3>3. Without a catalyst there is no real edge, and the earnings edge does not generalize</h3>
-      <p>The dataset does show an edge when an earnings catalyst is present, you can see it in the catalyst
-      charts below, but that edge does not survive once you widen the population and account for costs. Plain
-      post earnings drift is not the answer. In large caps the surprise is priced in within seconds to minutes
-      and the small residual drift sits inside the spread and fees, so nothing is left to trade, and our AAPL
-      work showed the same thing. In small caps the drift is genuinely larger, the classic Bernard and Thomas
-      anomaly, but it lives in exactly the names you cannot trade cheaply, wide spreads, thin volume, real
-      market impact, and hard or expensive borrow on the short side. After frictions, capacity limits, and the
-      decay that has shrunk the effect since the 1990s, the net tradeable edge is about zero. So a catalyst is
-      necessary but not sufficient, and it does not have to be earnings. Edge here comes from assessing each
-      setup discretionarily, weighing the catalyst, the structure, the trend, and the tape together, not from
-      any single fixed screen. If small caps offer anything around earnings it is more likely the opposite of
-      drift, the violent mean reversion after a parabolic move, which is the low float fade thesis worth
-      testing next.</p>
+      <p>The dataset shows an edge when an earnings catalyst is present, you can see it in the catalyst charts
+      below, but that edge does not hold up once you test it broadly and pay real costs. Trading the drift
+      after earnings does not work in practice. In large stocks the news is priced in almost instantly, and in
+      small stocks the drift is real but lives in names you cannot trade cheaply, wide spreads, thin volume,
+      and hard or expensive borrow, so the costs eat whatever is there. A catalyst is necessary but not
+      sufficient, and it does not have to be earnings. The real edge comes from judging each setup on its own,
+      the catalyst, the structure, the trend, and the tape together, not from one fixed screen.</p>
     </div>''')
     parts.append('<p class="lead" style="margin-top:24px"><b>The six daily findings on one plate.</b> '
                  'Detail and the intraday test follow below.</p>')
